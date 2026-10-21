@@ -23,6 +23,12 @@
       "description": "A website for parent brand, Raddis which connects tribal communities, landscapes and international partnership to bring the transparency in supply chain and empower the tribal communities",
       "url": "raddis.org",
       "image": "https://raddis.org/images/raddis-farmer.webp"
+    },
+    {
+      "title": "GVK Society",
+      "description": "A website for an agriculture based NGO operating in India, working primarily on the welfare of tribal communities by promoting regenerative agriculture for better livelihood and for a better planet.",
+      "url": "https://gvksociety.org",
+      "image": "https://static.wixstatic.com/media/662e11_730c4cb5e1ad4cea8e494f4451d1beb7~mv2.jpg/v1/fill/w_674,h_660,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/662e11_730c4cb5e1ad4cea8e494f4451d1beb7~mv2.jpg"
     }
   ]
 }
