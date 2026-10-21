@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anand Kumar Yalla · Design Strategy &amp; Visual Communication</title>
+  <meta name="description" content="Design, digital experiences and visual storytelling by Anand Kumar Yalla.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main>
+
+  <!-- HERO ·  change the background image here: --hero-image:url('assets/hero.jpg') -->
+  <section class="section hero" id="top" style="--hero-image: none">
+    <p class="label">DESIGN STRATEGY · VISUAL COMMUNICATION</p>
+    <h1 class="h1">
+      <span>Making ideas clear,</span>
+      <span class="muted">and bringing them to life.</span>
+    </h1>
+    <p class="text">I work across design, digital experiences, and visual storytelling, helping turn ideas and complex problems into things people can understand and use.</p>
+    <div class="actions">
+      <a class="btn btn--solid" href="#work">Explore my Work</a>
+      <a class="btn btn--light" href="#about">A little about me</a>
+    </div>
+  </section>
+
+  <!-- WORK · tiles are replaced by data/works.json (CMS) when it loads; these are the fallback -->
+  <section class="section" id="work">
+    <p class="label">Selected work</p>
+    <h2 class="h2">A few things I’ve worked on.</h2>
+    <div class="work">
+      <div class="grid frame" data-src="data/works.json">
+        <a class="box tile" href="#"><span class="box__title">Project Title</span><span class="box__text">Project description</span></a>
+        <a class="box tile" href="#"><span class="box__title">Project Title</span><span class="box__text">Project description</span></a>
+        <a class="box tile" href="#"><span class="box__title">Project Title</span><span class="box__text">Project description</span></a>
+        <a class="box tile" href="#"><span class="box__title">Project Title</span><span class="box__text">Project description</span></a>
+      </div>
+      <a class="btn btn--solid btn--lg" href="#"><span>Explore My Work</span></a>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section class="section" id="approach">
+    <p class="label">How I approach<span class="desk-only"> my work</span></p>
+    <h2 class="h2">First, understand the problem.</h2>
+    <p class="text">I work across design, digital experiences, and visual storytelling, helping turn ideas and complex problems into things people can understand and use.</p>
+    <div class="steps">
+      <div class="box card frame"><h3 class="box__title">Understand</h3><p class="box__text">Get to the heart of the problem.</p></div>
+      <div class="box card frame"><h3 class="box__title">Make</h3><p class="box__text">Find a practical, thoughtful solution.</p></div>
+      <div class="box card frame"><h3 class="box__title">Communicate</h3><p class="box__text">Make the idea easier to understand.</p></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <p class="label">A little about me</p>
+    <h2 class="h2">Design is what I do.<br class="br-m"> Curiosity is how I work.</h2>
+    <div class="about">
+      <div class="about__copy">
+        <p class="text">My experience spans product development, branding, and visual communication.</p>
+        <p class="text">I enjoy learning how things work, working with different people, and finding ways to make ideas more useful and easier to understand.</p>
+        <p class="text">I’m particularly interested in work connected to people’s livelihoods and the environment.</p>
+        <a class="btn btn--solid" href="#">More about me</a>
+      </div>
+      <!-- portrait: drop an <img src="…" alt="…"> inside to replace the colour block -->
+      <div class="panel frame"><img src="assets/anand-portrait.webp" alt="Anand Kumar Yalla"><span class="desk-only">Anand Kumar Yalla</span></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <p class="label">Let’s connect</p>
+    <h2 class="h2">Have something in<br class="br-m"> mind?</h2>
+    <p class="text">I’m always glad to connect with people working on interesting ideas, thoughtful design, or work that makes a difference.</p>
+    <div class="actions actions--end">
+      <a class="btn btn--light" href="#">LinkedIn</a>
+      <a class="btn btn--light" href="#">Instagram</a>
+      <a class="btn btn--solid" href="#">Get in touch</a>
+    </div>
+    <p class="copy mob-only">© by Anand Kumar Yalla</p>
+  </section>
+
+</main>
+<script src="js/main.js" defer></script>
+</body>
+</html>
