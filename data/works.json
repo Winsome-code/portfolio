@@ -1,28 +1,10 @@
 {
   "items": [
     {
-      "title": "Project Title 1",
-      "description": "Project description",
-      "url": "#",
-      "image": ""
-    },
-    {
-      "title": "Project Title 2",
-      "description": "Project description",
-      "url": "#",
-      "image": ""
-    },
-        {
-      "title": "Project Title 3",
-      "description": "Project description",
-      "url": "#",
-      "image": ""
-    },
-    {
-      "title": "Project Title 4",
-      "description": "Project description",
-      "url": "#",
-      "image": ""
-    },
+      "title": "Regenerative Landscapes",
+      "description": "A website for the global consortium for the regenerative & circular food & fibre landscapes",
+      "url": "https://regenfood-fibre.org/",
+      "image": "https://static.wixstatic.com/media/662e11_a064a6e86ec8482eb45c7bc196db3993~mv2.webp/v1/fill/w_1621,h_784,fp_0.53_0.34,q_85,enc_avif,quality_auto/coffee%20harvesting.webp"
+    }
   ]
 }
