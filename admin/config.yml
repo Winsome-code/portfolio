@@ -1,1 +1,39 @@
+backend:
+  name: turbo-github
+  turbo_site_id: "6ec94e92-f668-44ef-9d42-06e57ca85caa"
+  branch: main
 
+media_folder: "assets/uploads"
+public_folder: "assets/uploads"
+
+collections:
+  - name: "projects"
+    label: "Portfolio Projects"
+    description: "Manage the projects displayed on your homepage."
+    files:
+      - name: "works"
+        label: "Projects"
+        file: "data/works.json"
+        fields:
+          - label: "Projects"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - label: "Project Title"
+                name: "title"
+                widget: "string"
+
+              - label: "Description"
+                name: "description"
+                widget: "text"
+
+              - label: "Project URL"
+                name: "url"
+                widget: "string"
+                required: false
+
+              - label: "Project Image"
+                name: "image"
+                widget: "image"
+                required: false
