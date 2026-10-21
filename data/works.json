@@ -1,6 +1,28 @@
-[
-  { "title": "Project Title 1", "description": "Project description", "url": "#", "image": "" },
-  { "title": "Project Title", "description": "Project description", "url": "#", "image": "" },
-  { "title": "Project Title", "description": "Project description", "url": "#", "image": "" },
-  { "title": "Project Title", "description": "Project description", "url": "#", "image": "" }
-]
+{
+  "items": [
+    {
+      "title": "Project Title 1",
+      "description": "Project description",
+      "url": "#",
+      "image": ""
+    },
+    {
+      "title": "Project Title 2",
+      "description": "Project description",
+      "url": "#",
+      "image": ""
+    },
+        {
+      "title": "Project Title 3",
+      "description": "Project description",
+      "url": "#",
+      "image": ""
+    },
+    {
+      "title": "Project Title 4",
+      "description": "Project description",
+      "url": "#",
+      "image": ""
+    },
+  ]
+}
