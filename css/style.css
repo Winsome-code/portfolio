@@ -162,10 +162,29 @@ a { color: inherit; text-decoration: none; }
 .box__text { font: 400 9px / 1.2 var(--mono); }
 
 .tile {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   justify-content: flex-end;
   min-height: var(--tile-h);
   padding: var(--tile-pad);
-  background: var(--tile-img, none) center / cover no-repeat, var(--cream);
+  background: #000000;
+  color: var(--cream);
+}
+
+/* Keep the tile image at 50% opacity without fading the text */
+.tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--tile-img, none) center / cover no-repeat;
+  opacity: 0.5;
+}
+
+.tile .box__title,
+.tile .box__text {
+  color: var(--cream);
 }
 .card {
   justify-content: space-between;
@@ -186,9 +205,13 @@ a { color: inherit; text-decoration: none; }
 .hero .actions { margin-top: var(--s2); }
 
 /* work */
-.work { display: flex; flex-direction: column; gap: var(--s3); margin-top: var(--s2); }
+.work { display: flex; flex-direction: column; gap: var(--s2); margin-top: var(--s2); }
 .work .btn--lg { align-self: flex-end; }
 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--ext); }
+
+@media (max-width: 767px) {
+  .grid { grid-template-columns: 1fr; }
+}
 
 /* approach: stepped cards */
 .steps { display: grid; gap: var(--s3); margin-top: var(--s3); }
