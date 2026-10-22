@@ -35,7 +35,7 @@
   --p-weight: 400;
   --label: 10.5px;
 
-  --tile-h: 190px;
+  --tile-h: 220px;
   --tile-pad: 12px 16px;
   --card-h: 93px;
   --card-ink: var(--ink-soft);
@@ -55,7 +55,7 @@
     --p-weight: 500;
     --label: 9px;
 
-    --tile-h: 200px;
+    --tile-h: 250px;
     --tile-pad: 20px 24px;
     --card-h: 78px;
     --card-ink: var(--ink);
@@ -205,7 +205,7 @@ a { color: inherit; text-decoration: none; }
 .hero .actions { margin-top: var(--s2); }
 
 /* work */
-.work { display: flex; flex-direction: column; gap: var(--s2); margin-top: var(--s2); }
+.work { display: flex; flex-direction: column; gap: var(--s3); margin-top: var(--s2); }
 .work .btn--lg { align-self: flex-end; }
 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--ext); }
 
@@ -271,4 +271,29 @@ a { color: inherit; text-decoration: none; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .btn { transition: none; }
+}
+
+/* Work tile hover: reveal the full image and hide the text */
+@media (hover: hover) and (pointer: fine) {
+  .work .tile::before {
+    transition: opacity 0.3s ease;
+  }
+
+  .work .tile:hover::before {
+    opacity: 1;
+  }
+
+  .work .tile:hover .box__title,
+  .work .tile:hover .box__text {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work .tile::before,
+  .work .tile .box__title,
+  .work .tile .box__text {
+    transition: none;
+  }
 }
