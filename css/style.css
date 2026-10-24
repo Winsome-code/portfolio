@@ -3,14 +3,17 @@
    ========================================================================== */
 :root {
   /* colour */
-  --olive: #77794c;
-  --cream: #f5f3ec;
-  --sand: #d9d1c2;
-  --line: #b6a46b;
-  --ink: #090909;
-  --ink-soft: #343434;
+  /* Default theme: dark */
+  --page-bg: #000000;
+  --tile-bg: #000000;
+  --olive: #fc3636;
+  --cream: #ffffff;
+  --sand: #dad6cf;
+  --line: #dad6cf;
+  --ink: #ffffff;
+  --ink-soft: #dad6cf;
   --grey: #b2b2b2;
-  --hover: #b85f43;
+  --hover: #d33131;
 
   /* type */
   --sans: "DM Sans", system-ui, sans-serif;
@@ -63,6 +66,33 @@
   }
 }
 
+/* Position the theme switch at the top-right of the hero */
+.hero {
+  position: relative;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: -3%;
+  right: var(--margin);
+  z-index: 100;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s ease;
+}
+
+/* Hide when the visitor scrolls down */
+.theme-toggle.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  pointer-events: none;
+}
+
 /* ==========================================================================
    BASE
    ========================================================================== */
@@ -72,7 +102,7 @@ body {
   font: 400 var(--p) / 1.2 var(--sans);
   font-variation-settings: "opsz" 9;       /* matches the DM Sans 9pt cut in the design */
   color: var(--ink);
-  background: #fff;
+  background: var(--page-bg);
   -webkit-font-smoothing: antialiased;
 }
 a { color: inherit; text-decoration: none; }
@@ -168,7 +198,7 @@ a { color: inherit; text-decoration: none; }
   justify-content: flex-end;
   min-height: var(--tile-h);
   padding: var(--tile-pad);
-  background: #000000;
+  background: var(--tile-bg);
   color: var(--cream);
 }
 
@@ -187,7 +217,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--cream);
 }
 .card {
-  justify-content: space-between;
+  justify-content:space-between;
   height: var(--card-h);
   padding: 14px 14px 10px;
   color: var(--card-ink);
@@ -199,23 +229,32 @@ a { color: inherit; text-decoration: none; }
 /* hero */
 .hero {
   --label: 10.5px;
-  justify-content: center;
   background: var(--hero-image, none) center / cover no-repeat;
+  margin-top: 15%;
 }
 .hero .actions { margin-top: var(--s2); }
+
+@media (min-width: 768px) {
+  .hero {
+    margin-top: 0;
+  }
+  .theme-toggle {
+    top: 24px;
+  } 
+}
 
 /* work */
 .work { display: flex; flex-direction: column; gap: var(--s3); margin-top: var(--s2); }
 .work .btn--lg { align-self: flex-end; }
-.grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--ext); }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--ext); padding:1%; }
 
 @media (max-width: 767px) {
-  .grid { grid-template-columns: 1fr; }
+  .grid { grid-template-columns: 1fr; padding: 3%;}
 }
 
 /* approach: stepped cards */
 .steps { display: grid; gap: var(--s3); margin-top: var(--s3); }
-.steps .card { width: calc(80% - 94px); }
+.steps .card { width: calc(90% - 94px); }
 .steps .card:nth-child(2) { margin-left: 50px; }
 .steps .card:nth-child(3) { margin-left: 100px; }
 
@@ -294,6 +333,78 @@ a { color: inherit; text-decoration: none; }
   .work .tile::before,
   .work .tile .box__title,
   .work .tile .box__text {
+    transition: none;
+  }
+}
+
+/* ==========================================================================
+   THEME SWITCHING
+   Dark is the default. Add .theme-light to <html> for the original palette.
+   ========================================================================== */
+html.theme-light {
+  --page-bg: #ffffff;
+  --tile-bg: #000000;
+  --olive: #77794c;
+  --cream: #f5f3ec;
+  --sand: #d9d1c2;
+  --line: #b6a46b;
+  --ink: #090909;
+  --ink-soft: #343434;
+  --grey: #b2b2b2;
+  --hover: #b85f43;
+}
+
+/* Smoothly transition the main theme colors. */
+body,
+.card,
+.tile,
+.panel,
+.btn,
+.theme-toggle {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* Frameless theme control: icon-only, with no button border or background. */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 6px 0;
+  border: 0;
+  outline-offset: 5px;
+  background: transparent;
+  color: var(--ink);
+  font: 400 10.5px / 1 var(--mono);
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  color: var(--hover);
+}
+
+.theme-toggle__icon {
+  display: inline-block;
+  font: 16px / 1 var(--sans);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover .theme-toggle__icon {
+  transform: rotate(25deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body,
+  .card,
+  .tile,
+  .panel,
+  .btn,
+  .theme-toggle,
+  .theme-toggle__icon {
     transition: none;
   }
 }
